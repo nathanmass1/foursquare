@@ -1,5 +1,5 @@
 /* game board table */
-*{
+body {
   background-color: blanchedalmond;
 }
 
@@ -28,13 +28,19 @@ td {
   width: 50px;
   height: 50px;
   border: solid 1px black;
+  background-color: blue;
 }
 
-.column-top {
-  background-color: rgb(241, 76, 76);
-  color: red;
-  
+td:hover {
+  opacity: 0.5;
 }
+
+#column-top {
+  background-color: #8497e9cb;
+  opacity: 0.5;
+}
+
+
 
 #game {
   align-self: auto;
@@ -62,15 +68,35 @@ td {
   border-radius: 50%;
   background-color: blue;
   position: relative;
+  animation-name: dropin;
+  animation-duration: 1s;
+  
 }
 
 .player1 {
-  background-color: green;
+  background-color: red;
 }
 
 .player2 {
   background-color:orange;
 }
+
+
+@keyframes dropin {
+  from {
+    margin-top: -350px;
+
+
+  }
+
+  to {
+
+    margin-bottom: 0%;
+
+  }
+}
+
+
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
 
