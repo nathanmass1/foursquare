@@ -16,13 +16,21 @@ var board = []; // array of rows, each row is array of cells  (board[y][x])
  */
 
 function makeBoard() {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
+  // TODO: set "board" to empty HEIGHT x WIDTH matrix array [DONE]
+  for (let i = 0; i < HEIGHT; i++){
+    let innerArr = [];
+    for (let j = 0; j < WIDTH; j++){
+      innerArr.push(null);
+    }
+    board.push(innerArr);
+  }
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
 function makeHtmlBoard() {
-  // TODO: get "board" variable from the item in HTML w/ID of "board"
+  // Need to define the board - get it by id:
+  let board = document.getElementById("board");
 
   // TODO: add comment for this code
   var top = document.createElement("tr");
@@ -59,6 +67,7 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  board[y][x] = "piece will go here";
 }
 
 /** endGame: announce game end */
