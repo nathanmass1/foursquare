@@ -16,7 +16,14 @@ var board = []; // array of rows, each row is array of cells  (board[y][x])
  */
 
 function makeBoard() {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
+  // TODO: set "board" to empty HEIGHT x WIDTH matrix array [DONE]
+  for (let i = 0; i < HEIGHT; i++){
+    let innerArr = [];
+    for (let j = 0; j < WIDTH; j++){
+      innerArr.push(null);
+    }
+    board.push(innerArr);
+  }
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
@@ -52,19 +59,32 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  return 0;
+  // 5 is what we return if the column is empty....
+  for (let i = board.length-1; i >= 0; i--){
+    console.log('current column: ' + board[i][x]);
+    if (! board[i][x]) { return i };
+  }
+  // console.log("board " + x + " : " + board[x]);
+  return null;
 }
 
 /** placeInTable: update DOM to place piece into HTML board */
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  let targetCell = document.getElementById(`${y}-${x}`);
+  
+  targetCell.innerHTML = `<div class='piece player${currPlayer}'></div>`;
+  
+  board[y][x] = currPlayer;
+  
 }
 
 /** endGame: announce game end */
 
 function endGame(msg) {
   // TODO: pop up alert message
+  //alert(msg);
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -85,6 +105,11 @@ function handleClick(evt) {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
+  // REFACTOR - need to test if this checks entire array...
+  let isFilled = board.every(function(element, index, array){
+    return element;
+  });
+  console.log(isFilled);
 
   // check for win
   if (checkForWin()) {
@@ -93,6 +118,13 @@ function handleClick(evt) {
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
+  // REFACTOR!
+  if (currPlayer === 1){
+    currPlayer = 2;
+  }
+  else {
+    currPlayer = 1;
+  }
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
