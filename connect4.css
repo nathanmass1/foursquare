@@ -12,6 +12,10 @@
 	flex-direction: column;
 }
 
+.maincontainer h1 {
+  background-color: rgb(241, 76, 76);
+}
+
 .game {
   align-self: auto;
   display: flex;
@@ -26,6 +30,28 @@ td {
   border: solid 1px black;
 }
 
+.column-top {
+  background-color: rgb(241, 76, 76);
+  color: red;
+  
+}
+
+#game {
+  align-self: auto;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.startButton {
+  align-self: auto;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 /* pieces are div within game table cells: draw as colored circles */
 
 .piece {
@@ -35,6 +61,7 @@ td {
   height: 80%;
   border-radius: 50%;
   background-color: blue;
+  position: relative;
 }
 
 .player1 {
