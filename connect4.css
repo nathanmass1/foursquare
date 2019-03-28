@@ -13,6 +13,24 @@ td {
   margin: 5px;
   width: 80%;
   height: 80%;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.player1 {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.player2 {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color:orange;
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
