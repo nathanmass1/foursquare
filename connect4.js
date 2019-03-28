@@ -4,6 +4,7 @@
  * column until a player gets four-in-a-row (horiz, vert, or diag) or until
  * board fills (tie)
  */
+let winMessage = document.getElementById("message");
 
 var WIDTH = 7;
 var HEIGHT = 6;
@@ -178,4 +179,5 @@ let gameReset = document.getElementById("resetButton");
 gameReset.addEventListener("click", function(){
   makeBoard();
   makeHtmlBoard();
+  winMessage.innerText = "Let's play again";
 });
