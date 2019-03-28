@@ -157,8 +157,11 @@ function checkForWin() {
     );
   }
 
-  // TODO: read and understand this code. Add comments to help you.
-
+  //  Go through every single square in the board - grab up to 4 
+  //  values in each axis (horizontal, vertical) and each diagonal
+  //  and store into separate array for each, then check those in 
+  //  the _win function above which just checks if every value in the
+  //  array equals the current player.
   for (var y = 0; y < HEIGHT; y++) {
     for (var x = 0; x < WIDTH; x++) {
       var horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
