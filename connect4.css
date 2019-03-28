@@ -18,18 +18,10 @@ td {
 }
 
 .player1 {
-  margin: 5px;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
   background-color: green;
 }
 
 .player2 {
-  margin: 5px;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
   background-color:orange;
 }
 
