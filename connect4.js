@@ -23,7 +23,7 @@ function makeBoard() {
 
 function makeHtmlBoard() {
   // TODO: get "board" variable from the item in HTML w/ID of "board"
-
+  let board = document.getElementById("board");
   // TODO: add comment for this code
   var top = document.createElement("tr");
   top.setAttribute("id", "column-top");

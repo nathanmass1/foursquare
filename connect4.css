@@ -1,4 +1,24 @@
 /* game board table */
+*{
+  background-color: blanchedalmond;
+}
+
+
+.maincontainer {
+  align-self: auto;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.game {
+  align-self: auto;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
 
 td {
   width: 50px;
