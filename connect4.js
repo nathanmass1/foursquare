@@ -15,8 +15,13 @@ var board = []; // array of rows, each row is array of cells  (board[y][x])
  *    board = array of rows, each row is array of cells  (board[y][x])
  */
 
+function startGame() {
+  
+} 
+
 function makeBoard() {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array [DONE]
+  board = [];
   for (let i = 0; i < HEIGHT; i++){
     let innerArr = [];
     for (let j = 0; j < WIDTH; j++){
@@ -30,7 +35,9 @@ function makeBoard() {
 
 function makeHtmlBoard() {
   // TODO: get "board" variable from the item in HTML w/ID of "board"
+
   let board = document.getElementById("board");
+  board.innerHTML = "";
   // TODO: add comment for this code
   var top = document.createElement("tr");
   top.setAttribute("id", "column-top");
@@ -83,8 +90,10 @@ function placeInTable(y, x) {
 /** endGame: announce game end */
 
 function endGame(msg) {
-  // TODO: pop up alert message
-  //alert(msg);
+ 
+let winMessage = document.getElementById("message");
+winMessage.innerText = msg;
+
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -115,6 +124,8 @@ function handleClick(evt) {
   if (checkForWin()) {
     return endGame(`Player ${currPlayer} won!`);
   }
+
+
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
@@ -163,3 +174,8 @@ function checkForWin() {
 
 makeBoard();
 makeHtmlBoard();
+let gameReset = document.getElementById("resetButton");
+gameReset.addEventListener("click", function(){
+  makeBoard();
+  makeHtmlBoard();
+});
